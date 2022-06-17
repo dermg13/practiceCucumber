@@ -19,24 +19,24 @@ Feature: Home page related scenarios
     Then Verify the following dashboards are present:
       | All Topics  |
       | Coding      |
-      | Soft Skille |
+      | Soft Skill |
 
   Scenario: Verify user can add a statement in Do's section
-    And User clisks on "Add do " button
+    And User clicks on "Add do " button
     Then Verify user see "Your Input..." field is displayed
 
   Scenario: Verify user can add a statement in Don't section
-    And User clisks on "Add don't " button
+    And User clicks on "Add don't " button
     Then Verify user see "Your Input..." field is displayed
 
   Scenario: Verify user can add only letters and numbers in Do's section
-    And User clisks on "Add do " button
+    And User clicks on "Add do " button
     And User enters "" in input field
     And User clicks on "Enter" button
     Then Verify  user's statement was added
 
   Scenario: Verify user can add only letters and numbers in Dont's section
-    And User clisks on "Add don't " button
+    And User clicks on "Add don't " button
     And User enters "" in input field
     And User clicks on "Enter" button
     Then Verify  user's statement was added
