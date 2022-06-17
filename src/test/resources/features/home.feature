@@ -15,11 +15,14 @@ Feature: Home page related scenarios
   Scenario: Verify "Manage Access" button is not displayed
     Then Verify "Manage Access" button is not displayed
 
-  Scenario: Verify all dashboards are present
-    Then Verify the following dashboards are present:
+  @dashboardTest
+  Scenario Outline: Verify all dashboards are displayed
+    Then Verify the following "<dashboards>" are displayed:
+    Examples:
+      | dashboards  |
       | All Topics  |
       | Coding      |
-      | Soft Skille |
+      | Soft skills |
 
   Scenario: Verify user can add a statement in Do's section
     And User clisks on "Add do " button

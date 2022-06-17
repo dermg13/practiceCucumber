@@ -35,5 +35,10 @@ public class HomeSteps extends LoginPage implements CommonPage {
         CucumberLogUtils.logInfo("Verify Manage Access button is not displayed", true);
         Assert.assertEquals(btn, "Manage Access");
     }
+
+    @Then("Verify the following {string} are displayed:")
+    public void verifyTheFollowingAreDisplayed(String dashboards) {
+        Assert.assertTrue(WebDriverManager.isDisplayed(By.xpath(String.format(XPATH_TEMPLATE_TEXT, dashboards))));
+    }
 }
 
