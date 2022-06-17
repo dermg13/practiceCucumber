@@ -31,12 +31,12 @@ Feature: Home page related scenarios
 
   Scenario: Verify user can add only letters and numbers in Do's section
     And User clicks on "Add do " button
-    And User enters "" in input field
+    And User enters "Team4 Do's testing" in input field
     And User clicks on "Enter" button
     Then Verify  user's statement was added
 
   Scenario: Verify user can add only letters and numbers in Dont's section
     And User clicks on "Add don't " button
-    And User enters "" in input field
+    And User enters "Team4 Dont's testing" in input field
     And User clicks on "Enter" button
     Then Verify  user's statement was added

@@ -9,10 +9,10 @@ public class HomePage {
     public HomePage(){
         PageFactory.initElements(WebDriverManager.getDriver(), this);
     }
-    @FindBy(xpath = "//button[text()='Add do']")
+    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[1]")
     public WebElement addDoBtn;
 
-    @FindBy(xpath = "//button[text()='Add don't']")
+    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
     public WebElement addDontBtn;
 
     @FindBy(xpath = "//textarea[@placeholder='Your Input...']")
