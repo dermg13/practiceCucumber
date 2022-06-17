@@ -1,46 +1,42 @@
 @homeScenarios
 Feature: Home page related scenarios
 
-  Scenario: Verify title of page
-    Given User opens {string} page
+  Background: Sign in
     Given User signs in:
       | username= test@yahoo.com |
       | password = test123       |
-    Then Verify {title} of page
+
+  Scenario: Verify title of page
+    Then Verify "tite of the page is "Interview App"
 
   Scenario: Verify "Sign out" button
-    Given User signs in:
-      | username= test@yahoo.com |
-      | password = test123       |
     Then Verify "Sign out" button is displayed
 
   Scenario: Verify "Manage Access" button
-    Given User signs in:
-      | username= test@yahoo.com |
-      | password = test123       |
     Then Verify "Manage Access" button is not displayed
 
   Scenario: Verify all dashboards are present
-    When User signs in
     Then Verify the following dashboards are present:
       | All Topics  |
       | Coding      |
-      | Soft Skille |
+      | Soft Skills |
 
-    Scenario: Verify user can add a statement in Do's section
-      Given User signs in:
-        | username= test@yahoo.com |
-        | password = test123       |
-      Then Verify user can add a statement
+  Scenario: Verify user can add a statement in Do's section
+    And User clisks on "Add do " button
+    Then Verify user see "Your Input..." field is displayed
 
   Scenario: Verify user can add a statement in Don't section
-    Given User signs in:
-      | username= test@yahoo.com |
-      | password = test123       |
-    Then Verify user can add a statement
+    And User clisks on "Add don't " button
+    Then Verify user see "Your Input..." field is displayed
 
-    Scenario: Verify user can add only letters and numbers
-      Given User signs in:
-        | username= test@yahoo.com |
-        | password = test123       |
-      Then Verify user can add only enter letters and numbers
+  Scenario: Verify user can add only letters and numbers in Do's section
+    And User clisks on "Add do " button
+    And User enters "" in input field
+    And User clicks on "Enter" button
+    Then Verify  user's statement was added
+
+  Scenario: Verify user can add only letters and numbers in Dont's section
+    And User clisks on "Add don't " button
+    And User enters "" in input field
+    And User clicks on "Enter" button
+    Then Verify  user's statement was added
