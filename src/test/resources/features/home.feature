@@ -12,18 +12,21 @@ Feature: Home page related scenarios
     Given  User signs in:
       | Enter Username | test@yahoo.com |
       | Enter Password | test123        |
+    When User clicks on "Login" button
     Then Verify "Sign out" button is displayed
 
-  Scenario: Verify "Manage Access" button
+  Scenario: Verify "Manage Access" button is not displayed
     Given  User signs in:
       | Enter Username | test@yahoo.com |
       | Enter Password | test123        |
+    When User clicks on "Login" button
     Then Verify "Manage Access" button is not displayed
 
   Scenario: Verify all dashboards are present
     Given  User signs in:
       | Enter Username | test@yahoo.com |
       | Enter Password | test123        |
+    When User clicks on "Login" button
     Then Verify the following dashboards are present:
       | All Topics  |
       | Coding      |
@@ -33,16 +36,19 @@ Feature: Home page related scenarios
       Given  User signs in:
         | Enter Username | test@yahoo.com |
         | Enter Password | test123        |
+      When User clicks on "Login" button
       Then Verify user can add a statement
 
   Scenario: Verify user can add a statement in Don't section
     Given  User signs in:
       | Enter Username | test@yahoo.com |
       | Enter Password | test123        |
+    When User clicks on "Login" button
     Then Verify user can add a statement
 
     Scenario: Verify user can add only letters and numbers
       Given  User signs in:
         | Enter Username | test@yahoo.com |
         | Enter Password | test123        |
+      When User clicks on "Login" button
       Then Verify user can add only enter letters and numbers
