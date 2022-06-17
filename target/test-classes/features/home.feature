@@ -1,33 +1,48 @@
 @homeScenarios
 Feature: Home page related scenarios
 
-  Scenario: Verify header of the page is Automation with Selenium
+  Scenario: Verify title of page
+    Given  User signs in:
+      | Enter Username | test@yahoo.com |
+      | Enter Password | test123        |
+    When User clicks on "Login" button
+    Then Verify title of page is "Interview App"
 
-#    hardcoded parameter, don't use this way
-  @AUT-6 @smoke @regression @miniRegression
-  Scenario: Verify all links are displayed
-    Then Verify PHP Travels link is displayed
+  Scenario: Verify "Sign out" button
+    Given  User signs in:
+      | Enter Username | test@yahoo.com |
+      | Enter Password | test123        |
+    Then Verify "Sign out" button is displayed
 
-#    parameterize step, with dynamic parameter
-  @linkTest
-  Scenario: Verify following link is displayed
-    Then Verify "Saucedemo" link is displayed
+  Scenario: Verify "Manage Access" button
+    Given  User signs in:
+      | Enter Username | test@yahoo.com |
+      | Enter Password | test123        |
+    Then Verify "Manage Access" button is not displayed
 
-  @scenarioOutlineExample @regression
-  Scenario Outline: Verify following link is displayed
-    Then Verify "<linkText>" link is displayed
-    Examples:
-      | linkText    |
-      | Saucedemo   |
-      | PHP Travels |
-      | Internet    |
-      | E-commerce  |
+  Scenario: Verify all dashboards are present
+    Given  User signs in:
+      | Enter Username | test@yahoo.com |
+      | Enter Password | test123        |
+    Then Verify the following dashboards are present:
+      | All Topics  |
+      | Coding      |
+      | Soft Skille |
 
-  Scenario Outline: Verify button is enabled
-    Then Verify "<pageLink>" is enabled
-    Examples:
-      | pageLink   |
-      | Home       |
-      | Curriculum |
-#      | Notes      |
-#      | Inputs     |
+    Scenario: Verify user can add a statement in Do's section
+      Given  User signs in:
+        | Enter Username | test@yahoo.com |
+        | Enter Password | test123        |
+      Then Verify user can add a statement
+
+  Scenario: Verify user can add a statement in Don't section
+    Given  User signs in:
+      | Enter Username | test@yahoo.com |
+      | Enter Password | test123        |
+    Then Verify user can add a statement
+
+    Scenario: Verify user can add only letters and numbers
+      Given  User signs in:
+        | Enter Username | test@yahoo.com |
+        | Enter Password | test123        |
+      Then Verify user can add only enter letters and numbers
