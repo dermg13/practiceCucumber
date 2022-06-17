@@ -34,5 +34,10 @@ public class HomeSteps extends LoginPage implements CommonPage {
     public void verifyButtonIsNotDisplayed(String btn) {
        Assert.assertTrue(!WebDriverManager.isDisplayed(By.xpath(String.format(XPATH_TEMPLATE_TEXT, btn))));
     }
+
+    @Then("Verify the following {string} are displayed:")
+    public void verifyTheFollowingAreDisplayed(String dashboards) {
+        Assert.assertTrue(WebDriverManager.isDisplayed(By.xpath(String.format(XPATH_TEMPLATE_TEXT, dashboards))));
+    }
 }
 
