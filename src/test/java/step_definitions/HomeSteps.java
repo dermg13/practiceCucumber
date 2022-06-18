@@ -1,6 +1,7 @@
 package step_definitions;
 
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,21 +38,17 @@ public class HomeSteps extends LoginPage implements CommonPage {
         CucumberLogUtils.logInfo("Verify Manage Access button is not displayed", true);
         Assert.assertEquals(btn, "Manage Access");
     }
+
+    @And("User enters {string} in input field")
+    public void userEntersInInputField(String message) {
+        WebDriverManager.sendKeys(homePage.inputFields, message);
+    }
+
+    @Then("Verify user see {string} field is displayed")
+    public void verifyUserSeeFieldIsDisplayed(String message) {
+        Assert.assertEquals(message, WebDriverManager.getText(homePage.DoMSG));
+    }
 }
 
-//    @Then("Verify user see {string} field is displayed")
-//    public void verify_user_see_field_is_displayed(String message) {
-//        Assert.assertEquals(message, WebDriverManager.getText(homePage.lastMSG));
-//    }
-//
-//    @When("User enters {string} in input field")
-//    public void user_enters_in_input_field(String message) {
-//        WebDriverManager.sendKeys(homePage.inputFields, message);
-//    }
-//
-////    @Then("Verify  user's statement was added")
-////    public void verify_user_s_statement_was_added() {
-////        Assert.assertEquals(message, );
-//    }
-//
-//
+
+

@@ -5,6 +5,7 @@ import utils.WebDriverManager;
 
 public class LoginPage {
     public LoginPage(){
+
         PageFactory.initElements(WebDriverManager.getDriver(), this);
     }
 }

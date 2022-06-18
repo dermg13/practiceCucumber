@@ -12,17 +12,19 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[1]")
     public WebElement addDoBtn;
 
-    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
-    public WebElement addDontBtn;
+//    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
+//    public WebElement addDontBtn;
 
     @FindBy(xpath = "//textarea[@placeholder='Your Input...']")
     public WebElement inputFields;
 
     @FindBy(xpath = "(//div[@class='anyClass'])[1]/div[last()]/div[contains(@class, 'col-md-7')]")
-    public WebElement lastMSG;
+    public WebElement DoMSG;
 
-    @FindBy(xpath = "//button[@class='btn btn-outline-white btn-sm btn-success']")
-    public WebElement enterBtn;
+    @FindBy(xpath = "(//div[@class='anyClass'])[2]/div[last()]/div[contains(@class, 'col-md-7')]")
+    public WebElement DontMSG;
+
+
 
 }
 
