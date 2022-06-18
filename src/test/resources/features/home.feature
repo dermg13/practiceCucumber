@@ -23,23 +23,21 @@ Feature: Home page related scenarios
       | All Topics  |
       | Coding      |
       | Soft skills |
+      | Soft Skill |
+      | Soft Skill |
+
 
   Scenario: Verify user can add a statement in Do's section
-    And User clisks on "Add do " button
-    Then Verify user see "Your Input..." field is displayed
-
+    When User clicks on "Add do " button
+    And User enters "Team4 Do's testing" in input field
+    And User clicks on "Enter" button
+    Then Verify user see "Team4 Do's testing" field is displayed
+@123
   Scenario: Verify user can add a statement in Don't section
-    And User clisks on "Add don't " button
-    Then Verify user see "Your Input..." field is displayed
-
-  Scenario: Verify user can add only letters and numbers in Do's section
-    And User clisks on "Add do " button
-    And User enters "" in input field
+    When User clicks on Add don't button
+    And User enters "Team4 Dont's testing" in input field
     And User clicks on "Enter" button
-    Then Verify  user's statement was added
+    Then Verify user see "Team4 Dont's testing" field is displayed
 
-  Scenario: Verify user can add only letters and numbers in Dont's section
-    And User clisks on "Add don't " button
-    And User enters "" in input field
-    And User clicks on "Enter" button
-    Then Verify  user's statement was added
+
+
