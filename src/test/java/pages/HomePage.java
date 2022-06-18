@@ -12,8 +12,8 @@ public class HomePage {
     @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[1]")
     public WebElement addDoBtn;
 
-//    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
-//    public WebElement addDontBtn;
+    @FindBy(xpath = "(//*[@class='btn btn-success badge-pill newbtn mb-3'])[2]")
+    public WebElement addDontBtn;
 
     @FindBy(xpath = "//textarea[@placeholder='Your Input...']")
     public WebElement inputFields;

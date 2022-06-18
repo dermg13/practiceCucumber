@@ -2,6 +2,7 @@ package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -11,8 +12,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"step_definitions"},
         stepNotifications = true,
-        dryRun = true,
-        tags = "@homeScenarios"
-)
+        dryRun = false,
+        tags = "@123")
+
+
 public class CukesRunner {
 }

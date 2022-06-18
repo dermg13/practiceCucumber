@@ -15,11 +15,12 @@ import utils.CucumberLogUtils;
 import utils.SeleniumUtils;
 import utils.WebDriverManager;
 
-public class HomeSteps extends LoginPage implements CommonPage {
+public class HomeSteps implements CommonPage {
     HomePage homePage;
 
 
     public HomeSteps() {
+
         homePage = new HomePage();
     }
 
@@ -39,16 +40,24 @@ public class HomeSteps extends LoginPage implements CommonPage {
         Assert.assertEquals(btn, "Manage Access");
     }
 
+    @When("User clicks on Add don't button")
+    public void user_clicks_on_add_don_t_button() {
+        WebDriverManager.click(homePage.addDontBtn);
+    }
+
     @And("User enters {string} in input field")
     public void userEntersInInputField(String message) {
         WebDriverManager.sendKeys(homePage.inputFields, message);
     }
 
     @Then("Verify user see {string} field is displayed")
-    public void verifyUserSeeFieldIsDisplayed(String message) {
-        Assert.assertEquals(message, WebDriverManager.getText(homePage.DoMSG));
+    public void verifyUserSeeFieldIsDisplayed(String txt) {
+        Assert.assertTrue(homePage.DontMSG.isDisplayed());
     }
+
+
 }
+
 
 
 

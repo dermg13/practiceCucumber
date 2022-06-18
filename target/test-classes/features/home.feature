@@ -26,9 +26,9 @@ Feature: Home page related scenarios
     And User enters "Team4 Do's testing" in input field
     And User clicks on "Enter" button
     Then Verify user see "Team4 Do's testing" field is displayed
-
+@123
   Scenario: Verify user can add a statement in Don't section
-    When User clicks on "Add don't " button
+    When User clicks on Add don't button
     And User enters "Team4 Dont's testing" in input field
     And User clicks on "Enter" button
     Then Verify user see "Team4 Dont's testing" field is displayed
