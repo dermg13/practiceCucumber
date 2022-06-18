@@ -15,6 +15,7 @@ Feature: Home page related scenarios
   Scenario: Verify "Manage Access" button is not displayed
     Then Verify "Manage Access" button is not displayed
 
+<<<<<<< HEAD
   @dashboardTest
   Scenario Outline: Verify all dashboards are displayed
     Then Verify the following "<dashboards>" are displayed:
@@ -27,8 +28,22 @@ Feature: Home page related scenarios
   Scenario: Verify user can add a statement in Do's section
     And User clisks on "Add do " button
     Then Verify user see "Your Input..." field is displayed
+=======
+  Scenario: Verify all dashboards are present
+    Then Verify the following dashboards are present:
+      | All Topics  |
+      | Coding      |
+      | Soft Skill |
+>>>>>>> d8e16c8d6ba52b25fb7c5ff1f3e8e0e5fb7dbfdb
 
+  Scenario: Verify user can add a statement in Do's section
+    When User clicks on "Add do " button
+    And User enters "Team4 Do's testing" in input field
+    And User clicks on "Enter" button
+    Then Verify user see "Team4 Do's testing" field is displayed
+@123
   Scenario: Verify user can add a statement in Don't section
+<<<<<<< HEAD
     And User clisks on "Add don't " button
     Then Verify user see "Your Input..." field is displayed
 
@@ -43,3 +58,12 @@ Feature: Home page related scenarios
     And User enters "" in input field
     And User clicks on "Enter" button
     Then Verify  user's statement was added
+=======
+    When User clicks on Add don't button
+    And User enters "Team4 Dont's testing" in input field
+    And User clicks on "Enter" button
+    Then Verify user see "Team4 Dont's testing" field is displayed
+
+
+
+>>>>>>> d8e16c8d6ba52b25fb7c5ff1f3e8e0e5fb7dbfdb
