@@ -41,10 +41,12 @@ public class HomeSteps implements CommonPage {
     }
 
 
+
     @Then("Verify the following {string} are displayed:")
     public void verifyTheFollowingAreDisplayed(String dashboards) {
         Assert.assertTrue(WebDriverManager.isDisplayed(By.xpath(String.format(XPATH_TEMPLATE_TEXT, dashboards))));
     }
+
 
     @When("User clicks on Add don't button")
     public void user_clicks_on_add_don_t_button() {
@@ -60,8 +62,6 @@ public class HomeSteps implements CommonPage {
     public void verifyUserSeeFieldIsDisplayed(String txt) {
         Assert.assertTrue(homePage.DontMSG.isDisplayed());
     }
-
-
 
 }
 

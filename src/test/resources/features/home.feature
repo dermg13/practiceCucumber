@@ -22,11 +22,10 @@ Feature: Home page related scenarios
       | dashboards  |
       | All Topics  |
       | Coding      |
-<<<<<<< HEAD
       | Soft skills |
-=======
       | Soft Skill |
->>>>>>> d8e16c8d6ba52b25fb7c5ff1f3e8e0e5fb7dbfdb
+      | Soft Skill |
+
 
   Scenario: Verify user can add a statement in Do's section
     When User clicks on "Add do " button
